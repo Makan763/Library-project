@@ -1,0 +1,30 @@
+<h2>{{titre}}</h2>
+<div>
+  <div class="card-body">
+    <div class="table-responsive" *ngIf="affichage">
+      <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+        </tr>
+        <tr *ngFor="let p of (professeurs$ | async) as professeurs">
+          <td>{{p.id}}</td>
+          <td>{{p.Nom}}</td>
+          <td>{{p.Prenom}}</td>
+
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div  class="row row-spacer">
+    <div class="col-2">
+      <a class="btn btn-primary" [routerLink]="['/CreateProfesseur']">Ajouter Professeur</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<nav class="nav navbar-expand navbar-light bg-light">
+  <ul class="nav nav-pills">
+    <li>
+      <a class="nav-link" [routerLink]="['/home']" >Accueil</a>
+    </li>
+    <li>
+      <a class="nav-link" [routerLink]="['/livres']" >Livres</a>
+    </li>
+    <li>
+      <a class="nav-link" [routerLink]="['/professeurs']" >Professeurs</a>
+    </li>
+    <li>
+      <a class="nav-link" [routerLink]="['/etudiants']" >Etudiants</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

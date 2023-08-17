@@ -1,0 +1,186 @@
+<div class="card">
+  <div class="card-header">Création un nouveau livre</div>
+  <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" *ngIf="form">
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-4">
+                      <label
+                          for="name"
+                          class="label"
+                      >
+                          Titre
+                      </label>
+                  </div>
+                  <div class="col-md-8">
+                      <input
+                          type="text"
+                          formControlName="name"
+                          name="name"
+                          id="name"
+                          placeholder="Titre"
+                          class="form-control"
+                          required
+                      >
+                  </div>
+                  <div
+                      *ngIf="submitted && f['name'].errors"
+                      class="alert alert-danger"
+                  >
+                      <div *ngIf="f['name'].errors?.['required']">Le Titre est obligatoire.</div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-4">
+                      <label
+                          for="name"
+                          class="label"
+                      >
+                          Description
+                      </label>
+                  </div>
+                  <div class="col-md-8">
+                      <input
+                          type="text"
+                          formControlName="shortDescription"
+                          name="shortDescription"
+                          id="shortDescription"
+                          placeholder="Description"
+                          class="form-control"
+                          required
+                      >
+                  </div>
+                  <div
+                      *ngIf="submitted && f['name'].errors"
+                      class="alert alert-danger"
+                  >
+                      <div *ngIf="f['shortDescription'].errors?.['required']">Le Description est obligatoire.</div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-4">
+                      <label
+                          for="name"
+                          class="label"
+                      >
+                          Prix
+                      </label>
+                  </div>
+                  <div class="col-md-8">
+                      <input
+                          type="text"
+                          formControlName="price"
+                          name="price"
+                          id="price"
+                          placeholder="Prix"
+                          class="form-control"
+                          required
+                      >
+                  </div>
+                  <div
+                      *ngIf="submitted && f['name'].errors"
+                      class="alert alert-danger"
+                  >
+                      <div *ngIf="f['price'].errors?.['required']">Le Prix est obligatoire.</div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-4">
+                      <label
+                          for="name"
+                          class="label"
+                      >
+                          Etoile
+                      </label>
+                  </div>
+                  <div class="col-md-8">
+                      <input
+                          type="text"
+                          formControlName="nbrStar"
+                          name="nbrStar"
+                          id="nbrStar"
+                          placeholder="Etoile"
+                          class="form-control"
+                          required
+                      >
+                  </div>
+                  <div
+                      *ngIf="submitted && f['name'].errors"
+                      class="alert alert-danger"
+                  >
+                      <div *ngIf="f['nbrStar'].errors?.['required']">Le Nbr de s est obligatoire.</div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-4">
+                      <label
+                          for="categorie"
+                          class="label"
+                      >
+                          Catégorie
+                      </label>
+                  </div>
+                  <div class="col-md-8">
+                      <select
+                          class="btn-ptimary"
+                          formControlName="categorie"
+                          name="categorie"
+                          id="categorie"
+                      >
+                          <option
+                              *ngFor="let categorie of listCategorie"
+                              [value]="categorie"
+                          >
+                              {{categorie}}
+                          </option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-4">
+                      <label
+                          for="name"
+                          class="label"
+                      >
+                          URL Image
+                      </label>
+                  </div>
+                  <div class="col-md-8">
+                      <input
+                          type="text"
+                          formControlName="urlImage"
+                          name="urlImage"
+                          id="urlImage"
+                          placeholder="URL Image"
+                          class="form-control"
+                          required
+                      >
+                  </div>
+                  <div
+                      *ngIf="submitted && f['urlImage'].errors"
+                      class="alert alert-danger"
+                  >
+                      <div *ngIf="f['urlImage'].errors?.['required']">URL Image est obligatoire.</div>
+                  </div>
+              </div>
+          </div>
+          <button
+              type="submit"
+              class="btn btn-primary"
+          >
+              Ajouter Livre
+          </button>
+  </form>
+  </div>
+
+</div>
